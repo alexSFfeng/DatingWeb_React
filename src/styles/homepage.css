@@ -1,0 +1,360 @@
+/* Simple normalization */
+* {
+  margin : 0;
+  padding: 0;
+}
+
+
+body{
+  margin : 0;
+  font-family: "Lucida Console", Monaco, monospace;
+  padding-top: 3%;
+}
+
+/* NAVIGATION BAR STYLES -------------------------------- */
+.navigation {
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  position: fixed;
+  width : 100%;
+  -webkit-transform: translateZ(0);
+  z-index: 1;
+  top: 0;
+}
+
+.LSbuttons {
+  font-size: 16px;
+  padding : 3px 6px;
+  margin: 2px auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navigation a {
+  float:left;
+  text-align: center;
+  font-size: 18px;
+  font-family: monospace,sans-serif;
+  padding : 14px 16px;
+  color : white;
+  text-decoration: none;
+}
+
+.navigation a:hover{
+  background-color:#27a7d8;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.navigation a.active{
+  background-color: #ff9a00;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.navigation ul{
+  display: inline-block;
+  width: 100%;
+}
+
+.navigation ul li{
+  display: inline-block;
+}
+
+.LScontainer{
+  margin: 5px auto;
+  text-align: center;
+}
+
+#rightRegistration {
+  float:right;
+  height: 100%;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .navigation ul{
+    display: block;
+  }
+  .navigation ul li {
+    width: 100%;
+  }
+  .navigation ul li a{
+    width: 100%;
+  }
+}
+
+/* End of Navigation Bar style ----------------------------*/
+
+#homeIcon {
+  top: 20%;
+  background-color: transparent;
+
+}
+
+.sectionContainer {
+  margin: 2em auto;
+  margin-left: 1em;
+  margin-right: 1em;
+  background: none;
+  border: 0.3em solid black;
+  -webkit-animation: fadein 3.5s; /* Safari, Chrome and Opera > 12.1 */
+  background-color: transparent;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.divWrapper {
+  border: 0.5em solid #27a7d8;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.4);
+
+}
+
+#iconDiv {
+  border: 0.5em solid #27a7d8;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.4);
+  height:80vh;
+}
+
+/* Home icon and slogan style ------------------------------*/
+#sitePic {
+  border : 3px solid white;
+  margin: auto;
+  margin-left: 0.5em;
+  margin-top:0.5em;
+  margin-bottom: 0.2em;
+  max-width: 60%;
+  /*min-height: 60vh;*/
+  height: 95%;
+  width: auto;
+}
+
+#slogan{
+  font-size: 3.2vw;
+  font-weight: 800;
+  font-family: cursive,sans-serif;
+  text-shadow: 2px 2px gray;
+  text-align: center;
+  float : right;
+  margin : auto;
+  margin-right: 0.35em;
+  margin-top:0.2em;
+  margin-bottom: 0.2em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border : 3px solid white;
+  background-color: rgba(0,0,0,0.2);
+  max-width: 33%;
+  /*min-height: 50vh;*/
+  height: 95%;
+  width: auto;
+}
+/*  End of Home icon and slogan style ------------------------------*/
+
+/*  Service Description style --------------------------------------*/
+.descriptionService {
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  text-shadow: 2px 2px gray;
+  font-size: 3em;
+  font-family: monospace,sans-serif;
+
+}
+
+.ads {
+  margin:1em auto;
+  margin-left: 1em;
+  margin-right: 1em;
+  font-family: "Lucida Console", Monaco, monospace;
+  border: 2em solid black;
+  padding: 2em;
+  text-shadow: 2px 2px gray;
+}
+
+.ads dt{
+  margin-left: 1.5em;
+  font-size: 2em;
+  font-weight: 700;
+
+}
+
+.ads dd {
+  text-align: right;
+  margin-right: 2.5em;
+  margin-left: 50%;
+  font-size: 1.5em;
+}
+/* End of Service Description style ------------------------------*/
+
+/* Start of personality test style -------------------------*/
+.instructions {
+  margin-left: 1.2em;
+  font-size: 1.5em;
+}
+
+#testPreview {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 80%;
+
+}
+
+/* End of personality test style ----------------------------------*/
+
+/* Start of sign up form ----------------------------------------------*/
+form#signupForm, form#loginForm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  display: block;
+  width: 85%;
+  padding: 30px;
+  padding-top: 40px;
+  /*justify-content: center;*/
+  text-align: center;
+  background-color: white;
+}
+
+#signupForm input, #loginForm input{
+  box-sizing: border-box;
+  padding: .8em 0 10px .8em;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+#signupForm label, #loginForm label{
+  padding: .8em 0 10px .8em;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+#signupForm label#formTitle{
+  font-family: inherit;
+  font-size: 26px;
+  padding: .8em 0 10px .8em;
+  border: 1px dashed black;
+  padding-left:0;
+}
+
+#trait::-webkit-input-placeholder,
+#characterType::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  white-space:pre-line;
+  position:relative;
+  top:-7px;
+
+}
+
+#signupForm input.submitBttn, #loginForm input.submitBttn {
+  border: none;
+  width: 15%;
+  font-size: 26px;
+  background-color: black;
+  color:white;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+#signupForm input.submitBttn:hover, #loginForm input.submitBttn:hover {
+  background-color: #888888;
+}
+/* End of sign up form style --------------------------------*/
+
+/* Start of login popup modal style ---------------------------------*/
+.popupLogin {
+    display: none;
+    position: fixed;
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.loginContent {
+  background-color: white;
+  margin : 15% auto;
+  padding : 25px;
+  box-shadow: 5px 8px #777777;
+  width : 80%;
+}
+
+.closeIcon {
+  float: right;
+  font-size: 36px;
+  color:black;
+}
+
+.closeIcon:hover{
+  color:grey;
+}
+
+form#loginForm {
+  width:90%;
+  margin-bottom: 1em;
+}
+
+.loginOptions {
+  border : 1px solid white;
+  background-color: grey;
+  font-size: 1.5em;
+  padding : 10px;
+  color: white;
+  border-radius: 0px;
+  width: 40%;
+  text-align: center;
+  /* Chrome no round corners */
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+
+}
+
+/* End of login pop up page ----------------------------------*/
+
+/* Start of parallax effect styling ----------------------------*/
+.parallax {
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#parallax1 {
+  background-image: url("../images/parallax1.jpg");
+}
+
+#parallax2 {
+  background-image: url("../images/parallax2.jpg");
+}
+
+#parallax3 {
+  background-image: url("../images/parallax3.jpg");
+}
+
+#parallax4 {
+  background-image: url("../images/parallax4.jpg");
+}
+
+.sectionContainer.bigDiv {
+  background-color: transparent;
+}

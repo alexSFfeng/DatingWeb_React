@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("./../images/background.jpg");
+}
+.timelinePage{
+    float:left;
+    width: 100%;
+    overflow: hidden;
+}
+
+.clientMenu{
+    height: 100vh;
+    left: 0px;
+    width: 17vw;
+    min-width: 50px;
+    background-color: slategray;
+    float: left;
+    padding-top: 30px;
+    opacity: 0.8;
+}
+
+.clientMenu a{
+    text-decoration: none;
+}
+
+#clientPic{
+    object-fit: cover;
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
+    margin-bottom: 2vh;
+}
+
+.menuElements{
+    font-size: 3vw;
+    font-family: monospace,sans-serif;
+    text-align: center;
+}
+
+.sectionName{
+    line-height: 15vh;
+}
+
+.menuElements li{
+    list-style-type: none;
+}
+
+.targetstoPick{
+  text-align: center;
+  font-family: monospace, sans-serif;
+  font-size: 120%;
+  width: 10vw;
+  background: transparent;
+  color: aliceblue;
+  border: none;
+}
+
+#headerTimeline{
+    font-size: 6vw;
+    font-family: Georgia, sans-serif;
+    width: 40vw;
+    margin-bottom: 3vh;
+    margin-right: 3vw;
+    color: white;
+    float: left;
+    margin-left: 3vw;
+    margin-bottom: 20vh;
+}
+
+.taskPic{
+    display: inline-block;
+    width: 10vw;
+    height: auto;
+    margin-left: 20vw;
+    margin-top: 3vh;
+}
+
+#taskpic{
+    width: 10vw;
+    height: auto;
+}
+
+.timeline{
+    width: 100%;
+    height: 100%;
+}
+
+.schedule{
+    display: inline-block;
+    width: 79vw;
+    height: 100%;
+    margin-left: 2vw;
+    align-content: center;
+}
+
+.schedule li{
+    display: inline-block;
+    vertical-align: top;
+    width: 12vw;;
+    height: auto;
+
+}
+
+.schedule h5{
+    font-family: monospace, sans-serif;
+    font-size: 160%;
+    font-weight: normal;
+    color: aliceblue;
+    text-align: center;
+}
+
+.dailyTasks{
+    vertical-align: top;
+    color: aliceblue;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 2vw;
+
+}
+
+.dailyTasks li{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-right: 1vw;
+
+}
+
+
+#chatBox{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: silver;
+  box-sizing: border-box;
+  opacity: 1;
+  z-index: 1000;
+  margin: 0 0 -420px;
+  padding: 28px 10px 10px;
+  min-width: 300px;
+
+}
+
+.chatTitle {
+  position: absolute;
+  top:5px;
+  left: 5px;
+  font-size: 28px;
+  font-weight: 700;
+  height:25px;
+  line-height: 25px;
+  width: 100%;
+}
+
+#chatLog {
+  background-color: #aaa;
+  width: 270px;
+  height: 400px;
+  padding: 5px;
+}
+
+#chat {
+  background-color: white;
+  overflow: scroll;
+  height: 325px;
+  overflow-x: hidden;
+}
+
+#sendMessage{
+  margin-top: 10px;
+  width: 270px;
+  align-content: center;
+}
+
+#message {
+  float: left;
+  resize: none;
+  width: 200px;
+}
+
+#sendBttn {
+  float: right;
+  border: none;
+  background-color: #27a7d8;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#sendBttn:hover{
+  background-color: #1797c8;
+}
+
+.open, .close {
+  position:absolute;
+  top: 3px;
+  right: 20px;
+  font-weight: 700;
+  font-size:20px;
+  border: 1px solid gray;
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.close {
+  display: none;
+}
+
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.container::after{
+  content: "";
+  clear:both;
+  display: table;
+}
+
+.container p {
+  word-wrap: break-word;
+  word-break: normal;
+}
+.sender {
+  background-color: aliceblue;
+  border-color: #ccc;
+}
+
+.container img {
+  float: left;
+  max-width: 60px;
+  max-height: 50px;
+  width: 90%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
