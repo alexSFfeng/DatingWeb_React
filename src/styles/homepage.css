@@ -275,7 +275,7 @@ form#signupForm, form#loginForm {
 
 /* Start of login popup modal style ---------------------------------*/
 .popupLogin {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 2; /* Sit on top */
     left: 0;

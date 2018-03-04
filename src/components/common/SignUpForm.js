@@ -3,20 +3,6 @@ import { Link } from 'react-router';
 import {browserHistory} from 'react-router';
 
 
-// fake data
-const users = [
-  {
-    name: "Alex Feng",
-    email: "alex134B@ucsd.edu",
-    password: "shishangzuishuai"
-  },
-  {
-    name: "Ada Qu",
-    email: "ada134B@ucsd.edu",
-    password: "Haohaoxuexi24"
-  }
-];
-
 // form 
 class SignUpForm extends React.Component {
 
@@ -62,7 +48,8 @@ class SignUpForm extends React.Component {
       return;
     }
 
-    browserHistory.push('/clientProfile');
+    //browserHistory.push('/clientProfile');
+    alert("should go to profile page");
   }
 
   // rendering the form itself

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Header extends React.Component {
+
     jumpToSignUp(){
         window.location.href = "#signupPrompt";
     }
@@ -14,7 +15,7 @@ class Header extends React.Component {
                     <li><a href="#personalityTest">TAKE A TEST</a></li>
                     <li id="rightRegistration">
                         <div className="LScontainer">
-                            <button type="button" className="LSbuttons" > 
+                            <button type="button" className="LSbuttons" onClick={this.props.toggleFuc}> 
                             LOGIN</button>
                             <button type="button" className="LSbuttons" onClick={this.jumpToSignUp}> 
                             SIGN UP</button>
