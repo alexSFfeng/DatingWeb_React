@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, browserHistory } from 'react-router';
+
 
 // fake data
 const user = [
@@ -55,7 +56,7 @@ class LoginPopup extends React.Component {
     if(this.state.type == "User"){
       var reqUser = user[0];
       if(reqUser.email == this.state.loginName && reqUser.password == this.state.password){
-        alert("logged in");
+        browserHistory.push('/clientProfile');
       }
       else{
         alert("Invalid email/password");
@@ -66,7 +67,7 @@ class LoginPopup extends React.Component {
     else{
       var reqAgent = provider[0];
       if(reqAgent.email == this.state.loginName && reqAgent.password == this.state.password){
-        alert("logged in");
+        browserHistory.push('/providerProfile');
       }
       else{
         alert("Invalid ID/password");

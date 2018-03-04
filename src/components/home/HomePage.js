@@ -36,7 +36,7 @@ class HomePage extends React.Component {
     }
 
     return (
-      <div>
+      <div className="newBody">
         <Header toggleFuc={this.toggleLogin.bind(this)}/>
 
         <div className="parallax" id="parallax1"></div>

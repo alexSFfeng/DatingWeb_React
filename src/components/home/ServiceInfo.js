@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 // service descriptions
 const ServiceInfo = () => {
     return(

@@ -4,7 +4,6 @@ import AddTarget from './AddTarget';
 import "../../styles/styleClient.css";
 
 
-
 class ClientprofilePage extends React.Component{
     render(){
         return(

@@ -1,5 +1,7 @@
 import React from "react";
 import "./../../images/emptyProfile.png";
+import "../../styles/styleClient.css";
+
 
 class AddTarget extends React.Component{
 

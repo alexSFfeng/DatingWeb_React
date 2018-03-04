@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import SignUpForm from '../common/SignUpForm';
 
+
 // Test + sign up 
 class PersonalityTest extends React.Component {
   render() {

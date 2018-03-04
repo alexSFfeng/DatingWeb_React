@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+
 // site icon and slogan
 const SiteIcon = () => {
     return(
