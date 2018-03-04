@@ -448,7 +448,7 @@ margin-bottom: 10px;
   font-size: 20px;
 }
 
-#chatBox{
+.chatBox{
   position: fixed;
   bottom: 0;
   right: 0;
@@ -456,7 +456,7 @@ margin-bottom: 10px;
   box-sizing: border-box;
   opacity: 1;
   z-index: 1000;
-  margin: 0 0 -420px;
+  margin: 0;
   padding: 28px 10px 10px;
   min-width: 300px;
 
@@ -475,8 +475,8 @@ margin-bottom: 10px;
 
 #chatLog {
   background-color: #aaa;
-  width: 270px;
-  height: 400px;
+  width: 280px;
+  height: 450px;
   padding: 5px;
 }
 
@@ -490,6 +490,7 @@ margin-bottom: 10px;
 #sendMessage{
   margin-top: 10px;
   width: 270px;
+  height: 200px;
   align-content: center;
 }
 
@@ -497,6 +498,7 @@ margin-bottom: 10px;
   float: left;
   resize: none;
   width: 200px;
+  padding-left: 5px;
 }
 
 #sendBttn {
@@ -506,7 +508,7 @@ margin-bottom: 10px;
   font-size: 22px;
   font-weight: bold;
   color: white;
-  padding: 20px;
+  padding: 35px 20px;
   cursor: pointer;
 }
 
@@ -521,13 +523,10 @@ margin-bottom: 10px;
   font-weight: 700;
   font-size:20px;
   border: 1px solid gray;
+  color:white;
   padding-left: 5px;
   padding-right: 5px;
   cursor: pointer;
-}
-
-.close {
-  display: none;
 }
 
 .container {
@@ -536,6 +535,7 @@ margin-bottom: 10px;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  max-width:250px;
 }
 
 .container::after{
@@ -560,4 +560,15 @@ margin-bottom: 10px;
   width: 90%;
   margin-right: 20px;
   border-radius: 50%;
+}
+
+.sender img{
+  float:right;
+}
+.noDisplay {
+  display: none;
+}
+
+.noChat {
+  margin: 0 0 -458px 0;
 }
