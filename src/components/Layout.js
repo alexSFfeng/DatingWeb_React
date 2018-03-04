@@ -9,7 +9,7 @@ class Layout extends React.Component {
     let entity = null;
     console.log(this.props);
     if(this.props.route.isClient){
-      entity = <ClientprofilePage />;
+      entity = <ClientprofilePage targetName={""}/>;
     }
     else{
       entity = <ProviderprofilePage />;

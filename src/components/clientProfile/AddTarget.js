@@ -1,4 +1,5 @@
-import React from "react";
+import React, {PropTypes} from "react";
+import TargetDisplay from "./TargetDisplay";
 //import TargetInformationPop from "./TargetInformationPop";
 
 class AddTarget extends React.Component{
@@ -9,7 +10,6 @@ class AddTarget extends React.Component{
         this.state = {toShow:false, targetName:"", targetBirthday:"", targetEmail:"", targetFacebook:"", targetInstgram:"", targetAddress:""};
         this.OpenPopUp = this.OpenPopUp.bind(this);
         this.togglePopUp = this.togglePopUp.bind(this);
-        //this.submitForm = this.submitForm.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -18,23 +18,23 @@ class AddTarget extends React.Component{
         const target = event.target;
         const value = target.value;
         const name = target.name;
-
         this.setState({[name]:value});
     }
 
     handleSubmit(event){
-        alert('Saved' + this.state.targetName);
+        //alert('Saved' + this.state.targetName);
+        this.togglePopUp();
+        {this.props.func(this.state.targetName)}
         event.preventDefault();
     }
 
     OpenPopUp(){
-        alert("button clicked");
+        //alert("button clicked");
         //TargetInformationPop.togglePopUp();
         this.setState({toShow:true});
     }
 
     togglePopUp(){
-        //let toShow = !this.state.toShow;
         this.setState({toShow: !this.state.toShow});
     }
 
@@ -60,7 +60,7 @@ class AddTarget extends React.Component{
                         <button className="waitlist">WAITLIST</button>
                     </div>
 
-                    <div className="info" id="info" onSubmit={this.handleSubmit}>
+                    <form className="info" id="info" onSubmit={this.handleSubmit}>
                         <label className="labelStyle">Name</label>
                         <label className="labelStyle">Birthday</label>
 
@@ -80,7 +80,7 @@ class AddTarget extends React.Component{
                         <input className="addressI" placeholder="Enter address" name="targetAddress" onChange={this.handleInputChange} />
                         <label className="hobbiesL">Hobbies</label>
                         <textarea className="hobbiesI" placeholder="List all hobbies that you know the target has" onChange={this.handleInputChange} ></textarea>
-                    </div>
+                    
 
                     <h5 className="rankL">Rank</h5>
                     <select className="rank">
@@ -88,7 +88,8 @@ class AddTarget extends React.Component{
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
-                    <button type="submit" className="submit">submit</button>
+                    <input type="submit" value="Submit" className="submit"></input>
+                    </form>
                 </div>
                 : null
             }
