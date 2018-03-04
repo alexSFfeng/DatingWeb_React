@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import MenuBar from './common/MenuBar';
 import ClientprofilePage from './clientProfile/ClientprofilePage';
 import ProviderprofilePage from './providerProfile/ProviderprofilePage';
+import "../styles/styleClient.css";
+
 
 class Layout extends React.Component {
 
@@ -16,7 +18,7 @@ class Layout extends React.Component {
     }
 
     return (
-      <div className="container-fluid">
+      <div className="clientBody">
         <MenuBar isClient={this.props.route.isClient}/>
         {entity}
       </div>
