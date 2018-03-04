@@ -1,22 +1,31 @@
-import React, {PropTypes} from 'react';
-import MenueBar from './share/MenuBar';
+import React, { PropTypes } from 'react';
+import MenuBar from './common/MenuBar';
+import ClientprofilePage from './clientProfile/ClientprofilePage';
+import ProviderprofilePage from './providerProfile/ProviderprofilePage';
 
-class Layout extends React.Component{
-    render() {
-        //const isClient = this.props.isClient;
+class Layout extends React.Component {
 
-        return(
-            <div className="container-fluid">
-              <MenueBar />
-              {this.props.children}
-            </div>
-        );
+  render() {
+    let entity = null;
+    console.log(this.props);
+    if(this.props.route.isClient){
+      entity = <ClientprofilePage />;
     }
+    else{
+      entity = <ProviderprofilePage />;
+    }
+
+    return (
+      <div className="container-fluid">
+        <MenuBar isClient={this.props.route.isClient}/>
+        {entity}
+      </div>
+    );
+  }
 }
 
 Layout.propTypes = {
-    children: PropTypes.object.isRequired
-    //isClient: PropTypes.boolean.isRequired
+  route: PropTypes.object.isRequired
 };
 
 export default Layout;

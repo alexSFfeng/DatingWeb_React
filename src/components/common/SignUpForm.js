@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import {browserHistory} from 'react-router';
+import { Link ,browserHistory} from 'react-router';
 
 
 // form 
@@ -48,8 +47,7 @@ class SignUpForm extends React.Component {
       return;
     }
 
-    //browserHistory.push('/clientProfile');
-    alert("should go to profile page");
+    browserHistory.push('/clientProfile');
   }
 
   // rendering the form itself

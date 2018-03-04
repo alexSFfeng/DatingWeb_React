@@ -3,9 +3,6 @@
   padding: 0;
 }
 
-body{
-  background-image: url("./../images/background.jpg");
-}
 
 .targetPage{
   float: left;
@@ -117,6 +114,7 @@ body{
   display: table-cell;
   width: 76vw;
   float: right;
+  background-image: url("./../images/background.jpg");
 }
 
 .completedTargets{

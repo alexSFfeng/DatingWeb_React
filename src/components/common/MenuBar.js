@@ -1,13 +1,13 @@
-import React , {PropsTypes} from 'react';
+import React , {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
-import "./../../css/styleClient.css";
+import "../../styles/styleClient.css";
 
 class MenuBar extends React.Component  {
 
     constructor(props){
         super(props);
         // set initial state to be client page
-        this.state = {isClient:true};     
+        this.state = {isClient: this.props.isClient};     
     }
 
 
@@ -32,11 +32,15 @@ class MenuBar extends React.Component  {
             <div className="menuElements">
                 <IndexLink to="/" className="sectionName">HomePage</IndexLink>
                 <Link to={ProfileLink} className="sectionName">{ProfileNaming}</Link>
-                <Link to={TimelineLink} className="sectionName">Suchdule</Link> 
+                <Link to={TimelineLink} className="sectionName">Schedule</Link> 
             </div>
             </nav>
         );
    }
 }
+
+MenuBar.propTypes = {
+    isClient: PropTypes.bool.isRequired
+};
 
 export default MenuBar;

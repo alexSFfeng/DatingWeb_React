@@ -9,7 +9,6 @@ class AddTarget extends React.Component{
         this.state = {toShow:false};
         this.OpenPopUp = this.OpenPopUp.bind(this);
         this.togglePopUp = this.togglePopUp.bind(this);
-        this.ClosePopUp = this.ClosePopUp.bind(this);
     }
 
     OpenPopUp(){
@@ -23,9 +22,7 @@ class AddTarget extends React.Component{
         this.setState({toShow: !this.state.toShow});
     }
 
-    //ClosePopUp(){
-      //  this.setState({toShow:false});
-    //}
+
 
 
     render(){

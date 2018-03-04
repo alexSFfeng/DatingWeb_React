@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
 import AddTarget from './AddTarget';
+import "../../styles/styleClient.css";
+
 
 
 class ClientprofilePage extends React.Component{
