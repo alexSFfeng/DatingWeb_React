@@ -23,7 +23,7 @@ class ClientprofilePage extends React.Component{
           //alert("the putin array is " + allTargets.length);
           this.setState({targetNames: allTargets});
           //alert("the array has length" + this.state.targetNames.length);
-          this.forceUpdate();
+          this.forceUpdate(); 
         }
     }
 
