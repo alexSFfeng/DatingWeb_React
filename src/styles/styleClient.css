@@ -461,7 +461,6 @@ margin-bottom: 10px;
   margin: 0;
   padding: 28px 10px 10px;
   min-width: 300px;
-
 }
 
 .chatTitle {
@@ -572,5 +571,5 @@ margin-bottom: 10px;
 }
 
 .noChat {
-  margin: 0 0 -458px 0;
+  margin: 0 0 -600px 0;
 }

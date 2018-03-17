@@ -35,6 +35,7 @@ class ClientprofilePage extends React.Component{
                <h1 className="headerTargets">Target</h1>
                <TargetDisplay targetNames={this.state.targetNames}/>
                <AddTarget func={this.updateTargets.bind(this)}/>
+               <Chatbox isClient/>
             </div>
         );
     }
