@@ -7,17 +7,17 @@ class TargetDisplay extends React.Component{
     constructor(props){
         super(props);
         this.state = {targetNames: this.props.targetNames};
-        this.updateCurrent = this.updateCurrent.bind(this);
+        //this.updateCurrent = this.updateCurrent.bind(this);
     }
 
-    updateCurrent(props){
-        if(this.props.targetNames.length != this.state.targetNames.length){
-            this.setState({targetNames:this.props.targetNames});
-        }
-    }
+    //updateCurrent(props){
+      //  if(this.props.targetNames.length != this.state.targetNames.length){
+        //    this.setState({targetNames:this.props.targetNames});
+        //}
+    //}
 
     render(){
-        this.updateCurrent(this.props);
+       // this.updateCurrent(this.props);
         const targetsNames  = this.state.targetNames;
         //if( targetNames.length == 0){
           //  alert("TargetDisplay got an array with lenth" + targetNames.length);
