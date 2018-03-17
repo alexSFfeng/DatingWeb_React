@@ -54,7 +54,7 @@ class LoginPopup extends React.Component {
 
     // logging in as user
     if(this.state.type == "User"){
-      var reqUser = user[0];
+      let reqUser = user[0];
       if(reqUser.email == this.state.loginName && reqUser.password == this.state.password){
         browserHistory.push('/clientProfile');
       }
@@ -65,7 +65,7 @@ class LoginPopup extends React.Component {
     }
     // logging in as provider
     else{
-      var reqAgent = provider[0];
+      let reqAgent = provider[0];
       if(reqAgent.employeeId == this.state.loginName && reqAgent.password == this.state.password){
         browserHistory.push('/providerProfile');
       }

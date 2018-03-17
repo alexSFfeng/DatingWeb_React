@@ -4,7 +4,7 @@ import {mount, shallow} from 'enzyme';
 import Header from './Header';
 import { wrap } from 'module';
 
-describe('Testing Chatbox functionality', () =>{
+describe('Testing Header functionality', () =>{
 
   var wrapper = mount(<Header/>);
 

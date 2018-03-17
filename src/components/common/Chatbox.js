@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Message from './Message.js';
-
+import '../../styles/styleClient.css';
 
 // fake client data
 const clientStart = {
