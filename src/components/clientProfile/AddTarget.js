@@ -1,5 +1,7 @@
 import React, {PropTypes} from "react";
 import TargetDisplay from "./TargetDisplay";
+import {connect} from 'react-redux';
+import * as targetActions from './../../actions/targetActions';
 //import TargetInformationPop from "./TargetInformationPop";
 
 class AddTarget extends React.Component{
