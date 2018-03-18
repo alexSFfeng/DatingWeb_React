@@ -3,7 +3,7 @@ import expect from 'expect';
 import {mount, shallow} from 'enzyme';
 import ClientprofilePage from './ClientprofilePage';
 import { wrap } from 'module';
-
+/*
 describe('Testing ClientprofilePage functionality', () =>{
 
   // set up
@@ -19,4 +19,4 @@ describe('Testing ClientprofilePage functionality', () =>{
 
 
 
-});
+});*/
