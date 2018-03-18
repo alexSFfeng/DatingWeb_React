@@ -1,23 +1,9 @@
 import React from 'react';
 import { Link, browserHistory } from 'react-router';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as userActions from '../../actions/createUserAction';
 
-
-// fake data
-const user = [
-  {
-    name: "Alex Feng",
-    email: "alex134B@ucsd.edu",
-    password: "shishangzuishuai"
-  }
-];
-
-const provider = [
-  {
-    name: "Ada Qu",
-    employeeId: "14194052",
-    password: "Haohaoxuexi24"
-  }
-];
 
 class LoginPopup extends React.Component {
 
@@ -52,10 +38,14 @@ class LoginPopup extends React.Component {
       }
     }
 
+    // get the array of stored users
     // logging in as user
     if(this.state.type == "User"){
-      let reqUser = user[0];
-      if(reqUser.email == this.state.loginName && reqUser.password == this.state.password){
+      let UserArr = this.props.userState;
+      const userIndex = UserArr.findIndex(user => user.email == this.state.loginName);
+
+      // found the correct user
+      if( userIndex != -1 && UserArr[userIndex].password == this.state.password){
         browserHistory.push('/clientProfile');
       }
       else{
@@ -65,8 +55,11 @@ class LoginPopup extends React.Component {
     }
     // logging in as provider
     else{
-      let reqAgent = provider[0];
-      if(reqAgent.employeeId == this.state.loginName && reqAgent.password == this.state.password){
+      let AgentArr = this.props.agentState;
+      const agentIndex = AgentArr.findIndex(agent => agent.employeeId == this.state.loginName);
+
+      // found the valid agent
+      if(agentIndex != -1 && AgentArr[agentIndex].password == this.state.password){
         browserHistory.push('/providerProfile');
       }
       else{
@@ -114,4 +107,14 @@ class LoginPopup extends React.Component {
   }
 }
 
-export default LoginPopup;
+function mapStateToProps(state){
+  console.log(state.users);
+  console.log(state.agents);
+  return {
+    userState : state.users,
+    agentState : state.agents
+  };
+}
+
+
+export default connect(mapStateToProps)(LoginPopup);

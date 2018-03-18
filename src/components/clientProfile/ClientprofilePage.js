@@ -12,8 +12,7 @@ import * as targetActions from './../../actions/targetActions';
 class ClientprofilePage extends React.Component{
 
     constructor(props){
-        super(props);
-        alert("constructor called");
+        super(props);  
         this.state = {
            targetNames: props.targets
         };

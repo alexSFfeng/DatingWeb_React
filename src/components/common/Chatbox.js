@@ -2,29 +2,11 @@ import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Link, IndexLink } from 'react-router';
 import Message from './Message.js';
-import '../../styles/styleClient.css';
-
-// fake client data
-const clientStart = {
-  content: <div className="container">
-    <img src={require("../../images/cat.jpg")} alt="client avatar" className="right" />
-    <p className="response">I think we need a new plan... She's not responding to my texts</p></div>
-};
-
-const clientMessages = ["......", "That sounds interesting!", "I guess...",
-  "I'll give it a try; any other suggestions?"];
-
-// fake provider data
-const providerStart = {
-  content: <div className="container">
-    <img src={require("../../images/lovebots.jpg")} alt="agent avatar" className="right" />
-    <p className="response">How can I help you?</p></div>
-};
-
-const providerMessages = ["Thinking...", "From my previous experiences..", "Analyzing results...",
-  "You are too needy; humans don't like what is easy to get..."];
-
-let counter = 0;
+import * as chatActions from '../../actions/chatAction';
+import {connect} from 'react-redux';
+//import '../../styles/styleClient.css';
+import '../../styles/chatBox.css';
+const chatStyle = require('../../styles/chatBox.css');
 
 class Chatbox extends React.Component {
 
@@ -38,7 +20,6 @@ class Chatbox extends React.Component {
     this.state = {
       isClient: this.props.isClient,
       showUp: false,
-      messages: [],
       mode: ""
     };
 
@@ -47,21 +28,11 @@ class Chatbox extends React.Component {
   componentDidMount(){
     if(this.state.isClient){
       this.setState({
-        messages: this.state.messages.concat([{
-          sender: "Provider",
-          content: <p className="response">How can I help you</p>,
-          avatar: "../../images/lovebots.jpg"
-        }]),
         mode:"Client"
       });
     }
     else{
       this.setState({
-        messages: this.state.messages.concat([{
-          sender: "Client",
-          content: <p className="response">I think we need a new plan... She's not responding to my texts</p>,
-          avatar: "../../images/cat.jpg"
-        }]),
         mode:"Provider"
       });
     }
@@ -82,46 +53,24 @@ class Chatbox extends React.Component {
   }
 
   sendMessage() {
-
+    let newMessage = null;
     if (this.state.isClient) {
-      let fakeProviderdata = {
-        sender: "Provider",
-        content: <p className="response">{providerMessages[counter]}</p>,
-        avatar: "../../images/lovebots.jpg"
+      newMessage = {
+        sender: "Client",
+        content: <p className="response">{ReactDOM.findDOMNode(this.refs.message).value}</p>,
+        avatar: "../../images/cat.jpg"
       };
-      this.setState({
-        messages: this.state.messages.concat([
-          {
-          sender: "Client",
-          content: <p className="response">{ReactDOM.findDOMNode(this.refs.message).value}</p>,
-          avatar: "../../images/cat.jpg"
-          },
-          fakeProviderdata
-        ])
-      }, () => {
-        ReactDOM.findDOMNode(this.refs.message).value = "";
-      });
-      counter=counter+1;
+      this.props.sendMessage(newMessage);
+      ReactDOM.findDOMNode(this.refs.message).value = "";
     }
     else {
-      let fakeClientdata = {
-        sender: "Client",
-        content: <p className="response">{clientMessages[counter]}</p>,
+      newMessage ={
+        sender: "Provider",
+        content: <p className="response">{ReactDOM.findDOMNode(this.refs.message).value}</p>,
         avatar: "../../images/lovebots.jpg"
       };
-      this.setState({
-        messages: this.state.messages.concat([
-          {
-          sender: "Provider",
-          content: <p className="response">{ReactDOM.findDOMNode(this.refs.message).value}</p>,
-          avatar: "../../images/lovebots.jpg"
-        },
-        fakeClientdata
-      ])
-      },() => {
-        ReactDOM.findDOMNode(this.refs.message).value = "";
-      });
-      counter=counter+1;
+      this.props.sendMessage(newMessage);
+      ReactDOM.findDOMNode(this.refs.message).value = "";
     }
   }
 
@@ -132,21 +81,21 @@ class Chatbox extends React.Component {
     
     return (
       <div className={displayBool ? 'chatBox' : 'chatBox noChat'} id="chatBox" >
-        <span className="chatTitle" onClick={this.chatToggle}>Need Advice?</span>
+        <span className={chatStyle.chatTitle} onClick={this.chatToggle}>Need Advice?</span>
         <span className={displayBool ? "open noDisplay" : "open"} id="openS" onClick={this.chatToggle}>&#43;</span>
         <span className={displayBool ? "close" : "close noDisplay"} id="closeS" onClick={this.chatToggle}>&minus;</span>
-        <div id="chatLog">
-          <div id="chat" ref="chat">
+        <div className={chatStyle.chatLog} id="chatLog">
+          <div className={chatStyle.chat} id="chat" ref="chat">
             {
-              (this.state.messages).map(function(newText,i){
+              (this.props.messageHistory).map(function(newText,i){
                 return <Message key={i} newText={newText} from={user} />;
               })
             }
           </div>
-          <div id="sendMessage">
+          <div className={chatStyle.sendMessage} id="sendMessage">
             <textarea placeholder="Leave a command for your test subjects." id="message" ref="message"
-              rows="5" wrap="soft" spellCheck="true"></textarea>
-            <button id="sendBttn" onClick={this.sendMessage}>&larr;</button>
+              className={chatStyle.message} rows="5" wrap="soft" spellCheck="true"></textarea>
+            <button className={chatStyle.sendBttn} id="sendBttn" onClick={this.sendMessage}>&larr;</button>
           </div>
         </div>
       </div>
@@ -159,4 +108,18 @@ Chatbox.propTypes = {
   isClient: PropTypes.bool.isRequired
 };
 
-export default Chatbox;
+function mapStateToProps(state){
+  return {
+    messageHistory : state.messages
+  };
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    sendMessage : (message) => {
+      dispatch(chatActions.saveMessage(message));
+    }
+  };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Chatbox);

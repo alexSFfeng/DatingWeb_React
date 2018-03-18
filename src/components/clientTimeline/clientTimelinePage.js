@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import DisplaySchedule from './../providerTimeline/displaySchedule';
+import Chatbox from '../common/Chatbox';
 import './../../styles/styleTimelineClient.css';
 import {connect} from 'react-redux';
 
@@ -82,6 +83,7 @@ class ClientTImelinePage extends React.Component{
 
         
     </div>
+      <Chatbox isClient/>
     </div>
         );
     }

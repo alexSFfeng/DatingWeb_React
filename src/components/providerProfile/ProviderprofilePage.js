@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Chatbox from '../common/Chatbox';
 import './../../images/add.png';
 import './../../images/emptyProfile.png';
 import './../../styles/styleProvider.css';
@@ -23,6 +24,7 @@ class ProviderprofilePage extends React.Component {
               </div>
 
           </div>
+          <Chatbox isClient={false}/>
       </div>
     );
   }

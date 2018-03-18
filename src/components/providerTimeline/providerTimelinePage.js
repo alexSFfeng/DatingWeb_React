@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import './../../styles/styletimelineProvider.css';
 import './../../images/emptyProfile.png';
+import Chatbox from '../common/Chatbox';
 //import ToDoPopUp from './ToDoPopUp';
 import DisplaySchedule from './displaySchedule';
 import {connect} from 'react-redux';
@@ -236,6 +237,7 @@ class providerTimelinePage extends React.Component{
             }
 
 </div>
+  <Chatbox isClient={false}/>
 </div>
         );
     }

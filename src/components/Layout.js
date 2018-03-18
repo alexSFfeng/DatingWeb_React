@@ -11,7 +11,6 @@ class Layout extends React.Component {
 
   render() {
     let entity = null;
-    console.log(this.props);
     const isClient = this.props.route.isClient;
     const isProfile = this.props.route.isProfile;
     if(isClient && isProfile ){
