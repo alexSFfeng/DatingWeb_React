@@ -15,7 +15,7 @@ class DisplaySchedule extends React.Component{
 
             {
                 Tasks.map((task) =>
-                    <DisplayTask task={task} />
+                    <DisplayTask task={task}/>
                 )
             }
             </ul>
