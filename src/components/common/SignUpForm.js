@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link ,browserHistory} from 'react-router';
-
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as userActions from '../../actions/createUserAction';
 
 // form 
 class SignUpForm extends React.Component {
@@ -47,6 +48,11 @@ class SignUpForm extends React.Component {
       this.setState({password : "", rePassword : ""});
       return;
     }
+
+    let user = this.state;
+
+    this.props.actions.createUser(user);
+    console.log("hi store user is " + this.props.userState);
 
     browserHistory.push('/clientProfile');
   }
@@ -94,4 +100,17 @@ class SignUpForm extends React.Component {
   }
 }
 
-export default SignUpForm;
+function mapStateToProps(state){
+  console.log(state.users);
+  return{
+    userState : state.users
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(userActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
