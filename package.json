@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "Dating app built from pluralsight template",
   "author": "Template from Cory House; Add-on: Shanfeng Feng, Yingzhen Qu",
-  "scripts" : {
-    "prestart" : "babel-node tools/startMessage.js",
-    "start" : "npm-run-all --parallel open:src lint:watch test:watch",
-    "open:src" : "babel-node tools/srcServer.js",
-    "lint" : "node_modules/.bin/esw webpack.config.* src tools",
+  "scripts": {
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
-    "test:watch" : "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch"
   },
   "license": "MIT",
   "dependencies": {
@@ -39,7 +39,7 @@
     "colors": "1.1.2",
     "compression": "1.6.1",
     "cross-env": "1.0.7",
-    "css-loader": "0.23.1",
+    "css-loader": "^0.23.1",
     "enzyme": "2.2.0",
     "eslint": "2.9.0",
     "eslint-plugin-import": "1.6.1",
@@ -59,7 +59,7 @@
     "redux-immutable-state-invariant": "1.2.3",
     "redux-mock-store": "1.0.2",
     "rimraf": "2.5.2",
-    "style-loader": "0.13.1",
+    "style-loader": "^0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",

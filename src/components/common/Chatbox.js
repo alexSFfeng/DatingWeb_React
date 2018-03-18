@@ -4,7 +4,9 @@ import { Link, IndexLink } from 'react-router';
 import Message from './Message.js';
 import * as chatActions from '../../actions/chatAction';
 import {connect} from 'react-redux';
-import '../../styles/styleClient.css';
+//import '../../styles/styleClient.css';
+import '../../styles/chatBox.css';
+const chatStyle = require('../../styles/chatBox.css');
 
 class Chatbox extends React.Component {
 
@@ -79,21 +81,21 @@ class Chatbox extends React.Component {
     
     return (
       <div className={displayBool ? 'chatBox' : 'chatBox noChat'} id="chatBox" >
-        <span className="chatTitle" onClick={this.chatToggle}>Need Advice?</span>
+        <span className={chatStyle.chatTitle} onClick={this.chatToggle}>Need Advice?</span>
         <span className={displayBool ? "open noDisplay" : "open"} id="openS" onClick={this.chatToggle}>&#43;</span>
         <span className={displayBool ? "close" : "close noDisplay"} id="closeS" onClick={this.chatToggle}>&minus;</span>
-        <div id="chatLog">
-          <div id="chat" ref="chat">
+        <div className={chatStyle.chatLog} id="chatLog">
+          <div className={chatStyle.chat} id="chat" ref="chat">
             {
               (this.props.messageHistory).map(function(newText,i){
                 return <Message key={i} newText={newText} from={user} />;
               })
             }
           </div>
-          <div id="sendMessage">
+          <div className={chatStyle.sendMessage} id="sendMessage">
             <textarea placeholder="Leave a command for your test subjects." id="message" ref="message"
-              rows="5" wrap="soft" spellCheck="true"></textarea>
-            <button id="sendBttn" onClick={this.sendMessage}>&larr;</button>
+              className={chatStyle.message} rows="5" wrap="soft" spellCheck="true"></textarea>
+            <button className={chatStyle.sendBttn} id="sendBttn" onClick={this.sendMessage}>&larr;</button>
           </div>
         </div>
       </div>
